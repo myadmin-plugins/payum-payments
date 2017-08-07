@@ -11,7 +11,7 @@ use Symfony\Component\EventDispatcher\GenericEvent;
  */
 class Plugin {
 
-	public static $name = 'PayUm Payment System';
+	public static $name = 'Payum Payment System';
 	public static $description = 'Allows handling of Webuzo HTML5 VNC Connections';
 	public static $help = '';
 	public static $type = 'plugin';
