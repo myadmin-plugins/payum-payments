@@ -14,8 +14,7 @@ $api = new Api(
 *	message is legitimate and not already processed.
 */
 
-if (Api::NOTIFY_VERIFIED === $api->notifyValidate($_POST)) {
-    echo 'It is valid paypal notification. Let\'s do some additional checks';
-}
+if (Api::NOTIFY_VERIFIED === $api->notifyValidate($_POST))
+	    echo 'It is valid paypal notification. Let\'s do some additional checks';
 
 echo 'Something wrong in notification';
