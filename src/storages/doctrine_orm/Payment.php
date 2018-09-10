@@ -10,12 +10,12 @@ use Payum\Core\Model\Payment as BasePayment;
  */
 class Payment extends BasePayment
 {
-    /**
-     * @ORM\Column(name="id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
-     *
-     * @var integer $id
-     */
-    protected $id;
+	/**
+	 * @ORM\Column(name="id", type="integer")
+	 * @ORM\Id
+	 * @ORM\GeneratedValue(strategy="IDENTITY")
+	 *
+	 * @var integer $id
+	 */
+	protected $id;
 }

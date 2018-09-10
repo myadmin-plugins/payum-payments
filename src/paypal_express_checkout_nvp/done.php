@@ -1,6 +1,7 @@
 <?php
 // done.php
 use Payum\Core\Request\GetHumanStatus;
+
 include 'config.php';
 $token = $payum->getRequestVerifier()->verify($_REQUEST);
 $gateway = $payum->getGateway($token->getGatewayName());
@@ -17,9 +18,9 @@ echo json_encode(
 	[
 		'status' => $status->getValue(),
 		'order' => [
-        'total_amount' => $payment->getTotalAmount(),
-        'currency_code' => $payment->getCurrencyCode(),
-        'details' => $payment->getDetails()
+		'total_amount' => $payment->getTotalAmount(),
+		'currency_code' => $payment->getCurrencyCode(),
+		'details' => $payment->getDetails()
 		]
 	]
 );

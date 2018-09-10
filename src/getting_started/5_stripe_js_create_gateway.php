@@ -6,7 +6,7 @@ $factory = new StripeJsGatewayFactory();
 
 $gateway = $factory->create(
 	[
-    'publishable_key' => 'aKey',
-    'secret_key' => 'aKey'
+	'publishable_key' => 'aKey',
+	'secret_key' => 'aKey'
 	]
 );

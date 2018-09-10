@@ -5,8 +5,8 @@ $model->setCurrencyCode('USD');
 $model->setTotalAmount(1);
 $model->setDetails(
 	[
-    'RETURNURL' => 'http://return.url',
-    'CANCELURL' => 'http://cancel.url'
+	'RETURNURL' => 'http://return.url',
+	'CANCELURL' => 'http://cancel.url'
 	]
 );
 

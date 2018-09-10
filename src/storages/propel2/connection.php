@@ -2,6 +2,7 @@
 
 use Propel\Runtime\Propel;
 use Propel\Runtime\Connection\ConnectionManagerSingle;
+
 $serviceContainer = Propel::getServiceContainer();
 $serviceContainer->setAdapterClass('default', 'mysql');
 $manager = new ConnectionManagerSingle();
