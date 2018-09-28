@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/myadmin-payum-payments.iml" filepath="$PROJECT_DIR$/.idea/myadmin-payum-payments.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/payum-payments.iml" filepath="$PROJECT_DIR$/.idea/payum-payments.iml" />
     </modules>
   </component>
 </project>

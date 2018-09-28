@@ -1,5 +1,5 @@
 {
-	"name": "detain/myadmin-payum-payments",
+	"name": "detain/payum-payments",
 	"type": "myadmin-plugin",
 	"description": "Webuzo handling plugin for MyAdmin",
 	"keywords": [

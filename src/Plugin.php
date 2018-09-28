@@ -55,7 +55,7 @@ class Plugin
 	public static function getRequirements(GenericEvent $event)
 	{
 		$loader = $event->getSubject();
-		$loader->add_page_requirement('webuzo_configure', '/../vendor/detain/myadmin-payum-payments/src/webuzo_configure.php');
+		$loader->add_page_requirement('webuzo_configure', '/../vendor/detain/payum-payments/src/webuzo_configure.php');
 	}
 
 	/**
