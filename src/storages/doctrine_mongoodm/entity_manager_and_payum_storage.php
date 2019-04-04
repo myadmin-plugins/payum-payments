@@ -16,10 +16,12 @@ $driver = new MappingDriverChain;
 // payum's basic models
 $driver->addDriver(
 	new XmlDriver(
-	   new SymfonyFileLocator(
-		   [
+		new SymfonyFileLocator(
+	   	[
 			'/path/to/Payum/Core/Bridge/Doctrine/Resources/mapping' => 'Payum\Core\Model'
-		   ], '.mongodb.xml'),
+		   ],
+	   	'.mongodb.xml'
+	   ),
 		'.mongodb.xml'
 	),
 	'Payum\Core\Model'
@@ -27,7 +29,9 @@ $driver->addDriver(
 // your models
 AnnotationDriver::registerAnnotationClasses();
 $driver->addDriver(
-	new AnnotationDriver(new AnnotationReader(), [
+	new AnnotationDriver(
+		new AnnotationReader(),
+		[
 		'path/to/Acme/Document'
 											   ]
 	),

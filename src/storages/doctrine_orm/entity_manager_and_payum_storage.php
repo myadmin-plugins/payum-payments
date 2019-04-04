@@ -26,10 +26,10 @@ $config->setQueryCacheImpl(new ArrayCache());
 $config->setMetadataCacheImpl(new ArrayCache());
 $connection = ['driver' => 'pdo_sqlite', 'path' => ':memory:'];
 $orderStorage = new DoctrineStorage(
-   EntityManager::create($connection, $config),
-   'Payum\Entity\Payment'
+	EntityManager::create($connection, $config),
+	'Payum\Entity\Payment'
 );
 $tokenStorage = new DoctrineStorage(
-   EntityManager::create($connection, $config),
-   'Payum\Entity\PaymentToken'
+	EntityManager::create($connection, $config),
+	'Payum\Entity\PaymentToken'
 );
