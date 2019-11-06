@@ -22,6 +22,11 @@
 		"php": ">=5.0.0",
 		"ext-soap": "*",
 		"symfony/event-dispatcher": ">=2.8.26",
+		"guzzlehttp/guzzle": "*",
+		"payum/offline": "*",
+		"payum/payum": "*",
+		"php-http/curl-client": "*",
+		"php-http/guzzle6-adapter": "*",
 		"detain/myadmin-plugin-installer": "dev-master"
     },
 	"require-dev": {
