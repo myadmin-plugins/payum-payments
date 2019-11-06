@@ -4,16 +4,16 @@ Webuzo handling plugin for MyAdmin
 
 ## Links
 
-[Docs](https://github.com/Payum/Payum/blob/master/docs/index.md)
-[Get it started](https://github.com/Payum/Payum/blob/master/docs/get-it-started.md)
-[Architecture](https://github.com/Payum/Payum/blob/master/docs/the-architecture.md)
-[Storages](https://github.com/Payum/Payum/blob/master/docs/storages.md)
-[Gateways](https://github.com/Payum/Payum/blob/master/docs/supported-gateways.md)
-[Debugging](https://github.com/Payum/Payum/blob/master/docs/debugging.md)
-[Logger](https://github.com/Payum/Payum/blob/master/docs/logger.md)
-[Gateway in Backend](https://github.com/Payum/Payum/blob/master/docs/configure-gateway-in-backend.md)
-[Paypal Express Checkout - Get it Started](https://github.com/Payum/Payum/blob/master/docs/paypal/express-checkout/get-it-started.md)
-[Payum tagged StackOverflow Q&A](https://stackoverflow.com/questions/tagged/payum)
+* [Docs](https://github.com/Payum/Payum/blob/master/docs/index.md)
+* [Get it started](https://github.com/Payum/Payum/blob/master/docs/get-it-started.md)
+* [Architecture](https://github.com/Payum/Payum/blob/master/docs/the-architecture.md)
+* [Storages](https://github.com/Payum/Payum/blob/master/docs/storages.md)
+* [Gateways](https://github.com/Payum/Payum/blob/master/docs/supported-gateways.md)
+* [Debugging](https://github.com/Payum/Payum/blob/master/docs/debugging.md)
+* [Logger](https://github.com/Payum/Payum/blob/master/docs/logger.md)
+* [Gateway in Backend](https://github.com/Payum/Payum/blob/master/docs/configure-gateway-in-backend.md)
+* [Paypal Express Checkout - Get it Started](https://github.com/Payum/Payum/blob/master/docs/paypal/express-checkout/get-it-started.md)
+* [Payum tagged StackOverflow Q&A](https://stackoverflow.com/questions/tagged/payum)
 
 
 
