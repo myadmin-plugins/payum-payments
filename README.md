@@ -2,6 +2,44 @@
 
 Webuzo handling plugin for MyAdmin
 
+## Links
+
+[https://github.com/Payum/Payum/blob/master/docs/index.md](Docs)
+[https://github.com/Payum/Payum/blob/master/docs/get-it-started.md](Get it started)
+[https://github.com/Payum/Payum/blob/master/docs/the-architecture.md](Architecture)
+[https://github.com/Payum/Payum/blob/master/docs/storages.md](Storages)
+[https://github.com/Payum/Payum/blob/master/docs/supported-gateways.md](Gateways)
+[https://github.com/Payum/Payum/blob/master/docs/debugging.md](Debugging)
+[https://github.com/Payum/Payum/blob/master/docs/logger.md](Logger)
+[https://github.com/Payum/Payum/blob/master/docs/configure-gateway-in-backend.md](Gateway in Backend)
+[https://github.com/Payum/Payum/blob/master/docs/paypal/express-checkout/get-it-started.md](Paypal Express Checkout - Get it Started)
+[https://stackoverflow.com/questions/tagged/payum](Payum tagged StackOverflow Q&A)
+
+
+## Gateways
+
+### Official
+
+Paypal Express Checkout, Paypal Pro Checkout, Paypal Pro Hosted, Paypal Masspay, Paypal Rest, Stripe.js, Stripe Checkout, Authorize.Net AIM, Be2Bill CreditCard, Be2Bill Offsite, Payex, Offline, Klarna Checkout, Klarna Invoice, Sofort
+
+### Community
+
+r3s7/PayumDineroMail, r3s7/PayumBitPay, kayue/Paydollar, locastic/PayumPaylinkJustpay, locastic/TcomPayWayPayum, LedjIn/Sagepay, crevillo/payum-redsys, invit/payum-sofortueberweisung (abandoned), wiseape/payum-sofortuberweisung (abandoned), wiseape/payum-paymill, gdaws/payum_braintree, peterfox/Payum-Bitpay, winzou/payum-limonetik, ekipower/payum-nganluong, tmconsulting/payum-uniteller-gateway (^1.4), fullpipe/payum-uniteller (0.14.*), fullpipe/payum-flexidengi, paradigm/payum-trustly, paradigm/payum-paytrail, ekyna/PayumSips, accesto/PayumPayU, pixers/payum-dotpay, khal3d/payum-cashnpay, NetTeam/payum-adyen, NetTeam/payum-paymill, BoShurik/payum-yandex-money, sergeym/payum-pay-receipt, remyma/payum-paybox, artkonekt/payum-otp-hungary, sourcefabric/payum-mollie, sourcefabric/payum-mbe4, valiton/payum-payone, Setono/payum-quickpay
+
+### Omnipay gateways.
+
+thephpleague/omnipay-2checkout, lokielse/omnipay-alipay, thephpleague/omnipay-authorizenet, thephpleague/omnipay-buckaroo, thephpleague/omnipay-cardsave, thephpleague/omnipay-coinbase, dioscouri/omnipay-cybersource, DABSquared/omnipay-cybersource-soap, coatesap/omnipay-datacash, thephpleague/omnipay-dummy, dercoder/omnipay-ecopayz, thephpleague/omnipay-eway, thephpleague/omnipay-firstdata, thephpleague/omnipay-gocardless, thephpleague/omnipay-manual, thephpleague/omnipay-migs, thephpleague/omnipay-mollie, thephpleague/omnipay-multisafepay, thephpleague/omnipay-netaxept, thephpleague/omnipay-netbanx, alfaproject/omnipay-neteller, mfauveau/omnipay-pacnet, thephpleague/omnipay-payfast, thephpleague/omnipay-payflow, thephpleague/omnipay-paymentexpress, coatesap/omnipay-paymentsense, thephpleague/omnipay-paypal, efesaid/omnipay-payu, thephpleague/omnipay-pin, coatesap/omnipay-realex, thephpleague/omnipay-sagepay, thephpleague/omnipay-securepay, justinbusschau/omnipay-secpay, fruitcakestudio/omnipay-sisow, alfaproject/omnipay-skrill, thephpleague/omnipay-stripe, thephpleague/omnipay-targetpay, thephpleague/omnipay-worldpay, aTastyCookie/yandexmoney_omnipay, antqa/payum-perfectmoney
+
+### JMS payment plugins
+
+Paypal Express Checkout, Slim CD, Be2bill, Qiwi Wallet, Robokassa, Mtgox, Saferpay, Virgopass, Atos SIPS, Dotpay, Ogone, MeS, Adyen
+
+## Scripts
+
+These scripts shows you how to fill the gap betwen an http request that comes to you,  a refund for example and the payum gateway. It is expected that you copy\past the script to your code and reuse it for all gateways without changes.
+
+
+
 ## Build Status and Code Analysis
 
 Site          | Status
