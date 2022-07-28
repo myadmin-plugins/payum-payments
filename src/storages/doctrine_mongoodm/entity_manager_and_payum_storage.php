@@ -1,4 +1,5 @@
 <?php
+
 use Doctrine\Common\Annotations\AnnotationReader;
 use Doctrine\Common\Cache\ArrayCache;
 use Doctrine\Common\Persistence\Mapping\Driver\MappingDriverChain;
@@ -12,30 +13,30 @@ use Doctrine\ODM\MongoDB\Configuration;
 use Doctrine\MongoDB\Connection;
 
 Type::addType('object', 'Payum\Core\Bridge\Doctrine\Types\ObjectType');
-$driver = new MappingDriverChain;
+$driver = new MappingDriverChain();
 // payum's basic models
 $driver->addDriver(
-	new XmlDriver(
-		new SymfonyFileLocator(
-	   	[
-			'/path/to/Payum/Core/Bridge/Doctrine/Resources/mapping' => 'Payum\Core\Model'
-		   ],
-	   	'.mongodb.xml'
-	   ),
-		'.mongodb.xml'
-	),
-	'Payum\Core\Model'
+    new XmlDriver(
+        new SymfonyFileLocator(
+            [
+            '/path/to/Payum/Core/Bridge/Doctrine/Resources/mapping' => 'Payum\Core\Model'
+           ],
+            '.mongodb.xml'
+        ),
+        '.mongodb.xml'
+    ),
+    'Payum\Core\Model'
 );
 // your models
 AnnotationDriver::registerAnnotationClasses();
 $driver->addDriver(
-	new AnnotationDriver(
-		new AnnotationReader(),
-		[
-		'path/to/Acme/Document'
-											   ]
-	),
-	'Acme\Document'
+    new AnnotationDriver(
+        new AnnotationReader(),
+        [
+        'path/to/Acme/Document'
+                                               ]
+    ),
+    'Acme\Document'
 );
 $config = new Configuration();
 $config->setProxyDir(\sys_get_temp_dir());
@@ -47,10 +48,10 @@ $config->setMetadataCacheImpl(new ArrayCache());
 $config->setDefaultDB('payum_tests');
 $connection = new Connection(null, [], $config);
 $orderStorage = new DoctrineStorage(
-	DocumentManager::create($connection, $config),
-	'Acme\Document\Payment'
+    DocumentManager::create($connection, $config),
+    'Acme\Document\Payment'
 );
 $tokenStorage = new DoctrineStorage(
-	DocumentManager::create($connection, $config),
-	'Acme\Document\SecurityToken'
+    DocumentManager::create($connection, $config),
+    'Acme\Document\SecurityToken'
 );

@@ -1,4 +1,5 @@
 <?php
+
 // done.php
 use Payum\Core\Request\GetHumanStatus;
 
@@ -15,12 +16,12 @@ $gateway->execute($status = new GetHumanStatus($token));
 $payment = $status->getFirstModel();
 header('Content-Type: application/json; charset=UTF-8');
 echo json_encode(
-	[
-		'status' => $status->getValue(),
-		'order' => [
-		'total_amount' => $payment->getTotalAmount(),
-		'currency_code' => $payment->getCurrencyCode(),
-		'details' => $payment->getDetails()
-		]
-	]
+    [
+        'status' => $status->getValue(),
+        'order' => [
+        'total_amount' => $payment->getTotalAmount(),
+        'currency_code' => $payment->getCurrencyCode(),
+        'details' => $payment->getDetails()
+        ]
+    ]
 );

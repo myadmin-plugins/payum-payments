@@ -1,4 +1,5 @@
 <?php
+
 use Payum\Core\Extension\StorageExtension;
 use Payum\Core\Model\Identity;
 use Payum\Core\Storage\FilesystemStorage;
@@ -10,7 +11,7 @@ $order = $storage->create();
 $storage->update($order);
 $gateway->addExtension(new StorageExtension($storage));
 $gateway->execute($capture = new Capture(
-	$storage->identify($order)
+    $storage->identify($order)
 ));
 echo get_class($capture->getModel());
 // -> Payum\Core\Model\Payment

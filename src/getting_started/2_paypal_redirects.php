@@ -4,10 +4,10 @@ $model = new \Payum\Model\Payment();
 $model->setCurrencyCode('USD');
 $model->setTotalAmount(1);
 $model->setDetails(
-	[
-	'RETURNURL' => 'http://return.url',
-	'CANCELURL' => 'http://cancel.url'
-	]
+    [
+    'RETURNURL' => 'http://return.url',
+    'CANCELURL' => 'http://cancel.url'
+    ]
 );
 
 $gateway->execute(new \Payum\Core\Request\Capture($model));

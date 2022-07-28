@@ -1,4 +1,5 @@
 <?php
+
 use Payum\Core\Storage\StorageInterface;
 
 /**
@@ -6,5 +7,5 @@ use Payum\Core\Storage\StorageInterface;
  */
 class CustomStorage implements StorageInterface
 {
-	// implement all declared methods
+    // implement all declared methods
 }

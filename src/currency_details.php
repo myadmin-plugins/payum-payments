@@ -21,18 +21,18 @@ Or inside another action:
  */
 class FooAction extends GatewayAwareAction
 {
-	/**
-	 * @param $request
-	 */
-	public function execute($request)
-	{
-		$this->gateway->execute($currency = new \Payum\Core\GetCurrency('USD'));
+    /**
+     * @param $request
+     */
+    public function execute($request)
+    {
+        $this->gateway->execute($currency = new \Payum\Core\GetCurrency('USD'));
 
-		echo $currency->alpha3;  // USD
-		echo $currency->name;    // US Dollar
-		echo $currency->exp;     // 2
-		echo $currency->country; // US
-	}
+        echo $currency->alpha3;  // USD
+        echo $currency->name;    // US Dollar
+        echo $currency->exp;     // 2
+        echo $currency->country; // US
+    }
 }
 ?>
 Or directly ISO4217 service:

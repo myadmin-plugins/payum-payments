@@ -1,4 +1,5 @@
 <?php
+
 //prepare.php
 
 include 'config.php';

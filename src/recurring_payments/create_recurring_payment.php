@@ -1,4 +1,5 @@
 <?php
+
 // create_recurring_payment.php
 
 use Payum\Core\Request\Sync;
@@ -16,8 +17,8 @@ $agreementStatus = new GetHumanStatus($token);
 $gateway->execute($agreementStatus);
 
 if (!$agreementStatus->isCaptured()) {
-	header('HTTP/1.1 400 Bad Request', true, 400);
-	exit;
+    header('HTTP/1.1 400 Bad Request', true, 400);
+    exit;
 }
 
 $agreement = $agreementStatus->getModel();

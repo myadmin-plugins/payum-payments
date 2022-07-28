@@ -1,4 +1,5 @@
 <?php
+
 namespace Acme\Document;
 
 use Doctrine\ODM\MongoDB\Mapping\Annotations as Mongo;
@@ -9,10 +10,10 @@ use Payum\Core\Model\Payment as BasePayment;
  */
 class Payment extends BasePayment
 {
-	/**
-	 * @Mongo\Id
-	 *
-	 * @var integer $id
-	 */
-	protected $id;
+    /**
+     * @Mongo\Id
+     *
+     * @var integer $id
+     */
+    protected $id;
 }
