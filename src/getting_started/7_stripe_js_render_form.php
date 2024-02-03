@@ -9,5 +9,5 @@ try {
         exit;
     }
 
-    throws \LogicException('Unsupported reply', null, $reply);
+//    throws \LogicException('Unsupported reply', null, $reply);
 }
