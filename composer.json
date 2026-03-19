@@ -1,40 +1,44 @@
 {
 	"name": "detain/myadmin-payum-payments",
 	"type": "myadmin-plugin",
-	"description": "Webuzo handling plugin for MyAdmin",
+	"description": "Payum payment gateway integration plugin for the MyAdmin control panel, providing PayPal Express Checkout, Stripe, and recurring billing support with Doctrine ORM/ODM and filesystem storage backends.",
 	"keywords": [
-		"abuse",
-		"administration",
-		"spam"
+		"payum",
+		"payment",
+		"gateway",
+		"paypal",
+		"stripe",
+		"billing",
+		"recurring",
+		"myadmin"
 	],
 	"license": "LGPL-2.1-only",
 	"authors": [
 		{
 			"name": "Joe Huss",
-			"homepage": "https:\/\/my.interserver.net\/"
+			"homepage": "https://my.interserver.net/"
 		}
 	],
 	"config": {
-		"bin-dir": "vendor\/bin",
+		"bin-dir": "vendor/bin",
 		"minimum-stability": "dev"
 	},
 	"require": {
-		"php": ">=5.0.0",
+		"php": ">=8.2",
 		"ext-soap": "*",
-		"symfony/event-dispatcher": "^5.0@stable",
-		"detain/myadmin-plugin-installer": "dev-master"
-    },
+		"symfony/event-dispatcher": "^5.0|^6.0|^7.0"
+	},
 	"require-dev": {
-		"phpunit/phpunit": "*",
-		"phpunit/phpunit-mock-objects": "*",
-		"vlucas/phpdotenv": "*",
-		"codeclimate/php-test-reporter": "dev-master",
-		"satooshi/php-coveralls": "*",
-		"codacy/coverage": "dev-master"
+		"phpunit/phpunit": "^9.6"
 	},
 	"autoload": {
 		"psr-4": {
 			"Detain\\MyAdminPayum\\": "src/"
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"Detain\\MyAdminPayum\\Tests\\": "tests/"
 		}
 	}
 }
