@@ -57,7 +57,6 @@ class Plugin
          * @var \MyAdmin\Plugins\Loader $this->loader
          */
         $loader = $event->getSubject();
-        $loader->add_page_requirement('webuzo_configure', '/../vendor/detain/myadmin-payum-payments/src/webuzo_configure.php');
     }
 
     /**

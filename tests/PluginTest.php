@@ -298,41 +298,70 @@ class PluginTest extends TestCase
     }
 
     /**
-     * Tests that getRequirements calls add_page_requirement on the subject.
+     * Every source getRequirements() registers must resolve to a file that exists.
      *
-     * Uses an anonymous class to verify the loader interaction.
+     * This replaces testGetRequirementsCallsAddPageRequirement, which asserted that
+     * getRequirements() registered the name `webuzo_configure` at a path containing
+     * `webuzo_configure.php`. That test was green for years while the file it named had
+     * never existed in this package -- the registration was copy-pasted from
+     * myadmin-webuzo-vps. It checked the registration table and never the filesystem, so it
+     * locked the bug in place rather than catching it, and it was deleted along with the
+     * registration rather than adjusted.
+     *
+     * The registration created a router route, so `/webuzo_configure` would have been a 500
+     * had this plugin's hooks not been entirely commented out. `include/tf.php` require_once's
+     * a requirement source with no file_exists guard, so a wrong path is a fatal.
+     *
+     * The table is empty now, so this passes vacuously -- which is the correct outcome, not a
+     * gap. The closing assertion keeps the test from being reported risky under
+     * failOnRisky when the loop body never runs.
      *
      * @return void
      */
-    public function testGetRequirementsCallsAddPageRequirement(): void
+    public function testEveryRegisteredRequirementSourceResolvesToAnExistingFile(): void
     {
-        $called = false;
-        $capturedArgs = [];
+        $registered = [];
 
-        $loader = new class($called, $capturedArgs) {
-            /** @var bool */
-            private $called;
+        $loader = new class($registered) {
             /** @var array */
-            private $capturedArgs;
+            private $registered;
 
-            public function __construct(bool &$called, array &$capturedArgs)
+            public function __construct(array &$registered)
             {
-                $this->called = &$called;
-                $this->capturedArgs = &$capturedArgs;
+                $this->registered = &$registered;
             }
 
-            public function add_page_requirement(string $name, string $path): void
+            public function add_requirement(string $name, string $path, $methods = false): void
             {
-                $this->called = true;
-                $this->capturedArgs = ['name' => $name, 'path' => $path];
+                $this->registered[] = [$name, $path];
+            }
+
+            public function add_page_requirement(string $name, string $path, $methods = false): void
+            {
+                $this->registered[] = [$name, $path];
             }
         };
 
-        $event = new GenericEvent($loader);
-        Plugin::getRequirements($event);
+        Plugin::getRequirements(new GenericEvent($loader));
 
-        $this->assertTrue($called, 'add_page_requirement should have been called');
-        $this->assertSame('webuzo_configure', $capturedArgs['name']);
-        $this->assertStringContainsString('webuzo_configure.php', $capturedArgs['path']);
+        $packageRoot = dirname(__DIR__);
+        $prefix = '/../vendor/detain/myadmin-payum-payments/';
+        $missing = [];
+        foreach ($registered as [$name, $source]) {
+            // Sources are written relative to the host's INCLUDE_ROOT. Resolve a
+            // self-referencing one against the package root so this test also means
+            // something in a standalone checkout with no core around it.
+            if (strpos($source, $prefix) === 0) {
+                $resolved = $packageRoot . '/' . substr($source, strlen($prefix));
+            } else {
+                $resolved = dirname($packageRoot, 4) . '/include/' . ltrim($source, '/');
+            }
+            if (!is_file($resolved)) {
+                $missing[] = $name . ' -> ' . $resolved;
+            }
+        }
+
+        $this->assertSame([], $missing, 'getRequirements() registered sources that do not exist');
+        $this->assertIsArray($registered);
     }
 }
