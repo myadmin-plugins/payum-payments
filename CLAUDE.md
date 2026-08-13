@@ -127,7 +127,6 @@ public function testContainsClass(): void {
 
 Test files: `tests/FileExistenceTest.php` · `tests/PluginTest.php` · `tests/GettingStartedScriptsTest.php` · `tests/PaypalExpressCheckoutScriptsTest.php` · `tests/RecurringPaymentScriptsTest.php` · `tests/RecurringPaymentModelsTest.php` · `tests/StorageModelsTest.php` · `tests/StorageScriptsTest.php` · `tests/LoggerAwareActionTest.php`
 
-<!-- caliber:managed:pre-commit -->
 ## Plugin contract harness
 
 This package is on the shared contract harness from `detain/myadmin-plugin-installer`.
@@ -150,6 +149,7 @@ contract class primes constants and calls `register_module()`, neither of which 
 See the `plugin-contract-tests` skill for the full workflow, and `docs/testing-harness.md` in
 the installer.
 
+<!-- caliber:managed:pre-commit -->
 ## Before Committing
 
 **IMPORTANT:** Before every git commit, you MUST ensure Caliber syncs agent configs with the latest code changes.
